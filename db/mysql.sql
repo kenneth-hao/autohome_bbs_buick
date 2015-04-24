@@ -1,8 +1,16 @@
 DROP TABLE IF EXISTS autohome_bbs_content;
+
 CREATE TABLE autohome_bbs_content (
-  id int(20) PRIMARY KEY,
-  title char(100),
-  author char(50),
-  content TEXT
-) DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+  id int(32) NOT NULL AUTO_INCREMENT,
+  title varchar(50) DEFAULT NULL,
+  content text,
+  pub_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  author varchar(50) DEFAULT NULL,
+  author_url varchar(100) DEFAULT NULL,
+  reg_time varchar(20) DEFAULT NULL,
+  addr varchar(30) DEFAULT NULL,
+  attent_vehicle varchar(50) DEFAULT NULL,
+  cdate timestamp,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
